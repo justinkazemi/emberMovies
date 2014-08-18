@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <table class='table' >
+        <thead>
+          <tr>
+            <th {{ action 'sortBy' 'show_title'}} class="cPointer">Title</th>
+            <th {{ action 'sortByAZ' 'rating'}} class="cPointer">
+              Rating
+              {{#if isNone}}
+                  <small>Click to Sort</small>
+                {{else}}
+                  {{#if isAsc}}
+                    <small>Sort by Rating (ASC)</small>
+                  {{else}}
+                    <small>Sort by Rating (DESC)</small>
+                  {{/if}}
+              {{/if}}
+            </th>
+            <th {{ action 'sortBy' 'runtime'}} class="cPointer">Run Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each}}
+            <tr>
+              <td class="mWidth100">
+                 {{show_title}}
+              </td>
+              <td>
+                  {{rating}}
+              </td>
+              <td>
+                 {{runtime}}
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+</div>
